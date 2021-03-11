@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100vh;
+  width: auto;
+  font-size: 12px;
+  font-family: "Kumbh Sans", sans-serif;
+}
+body {
+  background-image: linear-gradient(180deg, #af67e9, #6565e7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+h1 {
+  padding: 30px;
+}
+.card {
+  width: 60%;
+  height: 70vh;
+  background: #fff;
+  border-radius: 15px;
+  display: flex;
+}
+.left,
+.right {
+  flex-basis: 50%;
+}
+.right {
+  margin: 0 1rem;
+}
+.left {
+  position: relative;
+  overflow: hidden;
+}
+.left > img {
+  position: absolute;
+}
+.woman-img {
+  transform: scale(0.8) translate(-133px, 50px);
+}
+.pattern {
+  transform: scale(0.5) translate(-737px, -514px);
+}
+.box-img {
+  position: absolute;
+  transform: scale(0.8) translate(-116px, 198px);
+  z-index: 1;
+}
+
+@media screen and (max-width: 700px) {
+  body .card {
+    flex-direction: column;
+    width: 90%;
+  }
+  h1 {
+    text-align: center;
+  }
+  .accordion {
+    font-size: 0.9rem;
+  }
+  .card .left {
+    overflow: visible;
+  }
+  .left .woman-img {
+    transform: scale(0.4) translate(-245px, -478px);
+  }
+  .left .pattern {
+    transform: scale(0.2) translate(-1730px, -2404px);
+  }
+  .card .box-img {
+    transform: scale(0.4) translate(-54px, -220px);
+  }
+}
+
+.faq-questions {
+  font-size: 10px;
+  border-bottom: 1px solid hsl(240, 5%, 91%);
+  padding: 1rem 0;
+}
+p {
+  display: none;
+  font-size: 1rem;
+}
+
+.accordion {
+  width: 100%;
+  text-align: left;
+  font-size: 1.2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2% 0;
+  color: hsl(237, 12%, 33%);
+}
+button:focus {
+  outline-style: none;
+}
+.accordion:after {
+  content: url(images/icon-arrow-down.svg);
+  float: right;
+}
+.active .accordion:after {
+  transform: rotate(180deg);
+}
+.active p {
+  display: block;
+}
